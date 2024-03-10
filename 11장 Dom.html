@@ -1,6 +1,7 @@
 <html>
 <head>
-  <title>11Àå Dom</title>
+	<meta charset="UTF-8">
+  <title>11ì¥ Dom</title>
   <script>
   function changeColor(newColor) {
   var elem = document.getElementById('para');
@@ -9,13 +10,13 @@
   </script>
 </head>
 <body>
-  <p id="para">¾î¶² ±Û</p>
+  <p id="para">ì–´ë–¤ ê¸€</p>
   <button onclick="changeColor('blue');">blue</button>
   <button onclick="changeColor('red');">red</button><br/>
 
 <div id="delmain">
-    <button id="bt">¿ä¼Ò Ãß°¡</button>
-    <button id="del">¿ä¼Ò Á¦°Å</button>
+    <button id="bt">ìš”ì†Œ ì¶”ê°€</button>
+    <button id="del">ìš”ì†Œ ì œê±°</button>
 </div>
   
   <script>
@@ -26,7 +27,7 @@
       function createNode() {
         var div = document.createElement("div");
         var a = document.createElement("a");
-        var txt = document.createTextNode("ÀÌ±æ¿ì");
+        var txt = document.createTextNode("ì´ê¸¸ìš°");
         a.appendChild(txt);
         div.append(a);
         document.body.appendChild(div);
@@ -36,7 +37,7 @@
 	  function removeNode() {
         		
 		var parent = document.getElementById("delmain");
-		var child = document.getElementById("txt"); //¹» ³Ö¾î¾ßÇÒÁö
+		var child = document.getElementById("txt"); //ë­˜ ë„£ì–´ì•¼í• ì§€
 		parent.removeChild(child);
        
       };
