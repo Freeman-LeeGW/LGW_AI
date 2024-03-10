@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+
+    <title>10장 java script event</title>
+    <style>
+      div {
+        border: 1px solid red;
+      }
+    </style>
+    <script>
+	date = new Date();
+	subjects = new Array("a", "b", "c");
+		//document.write(subjects.shift() + "<br/>");
+		document.write(subjects.join());
+		document.write(date.getDay());
+      window.onload = function () {
+        var bt = document.getElementById("bt");
+        bt.onclick = function () {
+          alert("클릭했습니다.!");
+        };
+      };
+    </script>
+  </head>
+  <body>
+    <div id="bt">클릭</div>
+  </body>
+</html>

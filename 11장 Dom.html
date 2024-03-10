@@ -1,0 +1,50 @@
+<html>
+<head>
+  <title>11장 Dom</title>
+  <script>
+  function changeColor(newColor) {
+  var elem = document.getElementById('para');
+  elem.style.color = newColor;
+  }
+  </script>
+</head>
+<body>
+  <p id="para">어떤 글</p>
+  <button onclick="changeColor('blue');">blue</button>
+  <button onclick="changeColor('red');">red</button><br/>
+
+<div id="delmain">
+    <button id="bt">요소 추가</button>
+    <button id="del">요소 제거</button>
+</div>
+  
+  <script>
+    window.onload = function () {
+      var bt = document.getElementById("bt");
+      var del = document.getElementById("del");
+
+      function createNode() {
+        var div = document.createElement("div");
+        var a = document.createElement("a");
+        var txt = document.createTextNode("이길우");
+        a.appendChild(txt);
+        div.append(a);
+        document.body.appendChild(div);
+      };
+      bt.onclick = createNode;
+	  
+	  function removeNode() {
+        		
+		var parent = document.getElementById("delmain");
+		var child = document.getElementById("txt"); //뭘 넣어야할지
+		parent.removeChild(child);
+       
+      };
+      del.onclick = removeNode;
+	  
+      
+    };
+  </script>
+  
+</body>
+</html>

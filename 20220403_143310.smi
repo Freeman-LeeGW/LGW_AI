@@ -1,0 +1,46 @@
+<!-- This File Raw Encoding Type UTF-8 -->
+<!-- Converted at http://convert.jamack.net -->
+<SAMI>
+<HEAD>
+<TITLE>Converted at http://convert.jamack.net</TITLE>
+<STYLE TYPE="text/css">
+<!--
+.KRCC {Name:KOREAN; lang:ko-KR; SAMIType:CC;}
+-->
+</STYLE>
+</HEAD>
+<BODY>
+<SYNC Start=1000>
+<P Class=krcc><b>이 예제는 영상에 자막을 추가하는 연습입니다.</b><br>
+이렇게 태그를 직접 적용 할 수 있습니다.</P>
+
+<SYNC Start=4000>
+<P Class=krcc>&nbsp;</P>
+
+<SYNC Start=5000>
+<P Class=krcc><u><i>아름다운 풍경을 감상해 보세요. 위치나 크기도 조절이 가능해요.</i></u></P>
+
+<SYNC Start=6990>
+<P Class=krcc>&nbsp;</P>
+
+<SYNC Start=7000>
+<P Class=krcc>따로 스타일을 지정할 수도 있습니다.</c></P>
+
+<SYNC Start=8990>
+<P Class=krcc>&nbsp;</P>
+
+<SYNC Start=9000>
+<P Class=krcc>그런데 이렇게 텍스트를 편집하는 방법으로 일일히 만들기는 힘들어요.</P>
+
+<SYNC Start=12000>
+<P Class=krcc>&nbsp;</P>
+
+<SYNC Start=13000>
+<P Class=krcc>- 감사합니다.<br>
+[출처] 웹 비디오에 자막 넣기 : VTT 포맷|작성자 코스모스</P>
+
+<SYNC Start=-10>
+<P Class=krcc>&nbsp;</P>
+
+</BODY>
+</SAMI>
