@@ -1,0 +1,63 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
+<!DOCTYPE html PUBLIC>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>4장 table colgroup</title>
+</head>
+<body>
+    <table border="1">
+	<caption>
+	caption 테이블제목
+	</caption>
+	<th>테이블</th>
+	<th>만들기</th>
+	<tr><!-- 첫번째 줄 시작 -->
+	    <td>첫번째 칸</td>
+	    <td>두번째 칸</td>
+	</tr><!-- 첫번째 줄 끝 -->
+	<tr><!-- 두번째 줄 시작 -->
+	    <td>첫번째 칸</td>
+	    <td>두번째 칸</td>
+	</tr><!-- 두번째 줄 끝 -->
+    </table>
+	   <table border="0">
+	<caption>
+	테이블 만들기
+	</caption>
+	<th>테이블</th>
+	<th>만들기</th>
+	<tr><!-- 첫번째 줄 시작 -->
+	    <td>첫번째 칸</td>
+	    <td>두번째 칸</td>
+	</tr><!-- 첫번째 줄 끝 -->
+	<tr><!-- 두번째 줄 시작 -->
+	    <td>첫번째 칸</td>
+	    <td>두번째 칸</td>
+	</tr><!-- 두번째 줄 끝 -->
+    </table>
+	
+	<table border="1">
+    <caption>Superheros and sidekicks</caption>
+    <colgroup>
+        <col>
+        <col span="2" class="batman">
+        <col span="2" class="flash">
+    </colgroup>
+    <tr>
+        <td>?</td>
+        <th scope="col">Batman</th>
+        <th scope="col">Robin</th>
+        <th scope="col">The Flash</th>
+        <th scope="col">Kid Flash</th>
+    </tr>
+    <tr>
+        <th scope="row">Skill</th>
+        <td>Smarts</td>
+        <td>Dex, acrobat</td>
+        <td>Super speed</td>
+        <td>Super speed</td>
+    </tr>
+</table>
+</body>
+</html>
