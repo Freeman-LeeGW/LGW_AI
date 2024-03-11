@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>mysql</title>
+</head>
+<body>
+
+<h1>mysql DB 생성</h1>
+<pre><code>
+show databases;
+
+CREATE DATABASE test;
+
+USE test;
+</code></pre>
+
+<h1>mysql Table 생성</h1>
+<pre><code>
+SHOW TABLES;
+
+CREATE TABLE student (
+  student_no INT NOT NULL,
+  name VARCHAR(20),
+  age INT,
+  phone VARCHAR(20),
+  address VARCHAR(100),
+  memo VARCHAR(200)
+);
+
+INSERT INTO student (student_no, name, age, phone, address, memo)
+VALUES (NULL, '홍길동', 30, '010-1111-2222', '한양', '홍길동입니다.');
+
+select * from student;
+</code></pre>
+
+</body>
+</html>
