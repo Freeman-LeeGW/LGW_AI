@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sungjuk.java</title>
+</head>
+<body>
+<h1>Sungjuk.java</h1>
+<pre><code>
+package exam14;
+
+public class Sungjuk {
+    private String name = "홍길동";
+    private int[] jumsu = {60, 70, 80, 90};
+    private int total;
+    
+    public void setName(String n) {name = n;}
+    public String getName() {return name;}
+    
+    public int Total() {
+    
+        for(int i=0; i<4; i++) {
+            int total = 0;
+            total += jumsu[i];
+        }
+        return total;
+        }
+    
+    public float Avg() {return (total)/4.f;}
+}
+</code></pre>
+<h1>SungjukExample.java</h1>
+<pre><code>
+package exam14;
+
+public class SungjukExample {
+
+    public static void main(String[] args) {
+        Sungjuk sungjuk = new Sungjuk();
+        
+        System.out.println("이름 : " + sungjuk.getName()); 
+        System.out.println("총점 : " + sungjuk.Total()); 
+        System.out.println("총점 : " + sungjuk.Avg()); 
+        
+    }
+}
+</code></pre>
+</body>
+</html>
