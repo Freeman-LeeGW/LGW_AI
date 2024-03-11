@@ -18,8 +18,10 @@ USE test;
 
 <h1>mysql Table 생성</h1>
 <pre><code>
+-- 테이블 보기
 SHOW TABLES;
 
+-- 1. 학생 테이블 생성
 CREATE TABLE student (
   student_no INT NOT NULL,
   name VARCHAR(20),
@@ -29,10 +31,30 @@ CREATE TABLE student (
   memo VARCHAR(200)
 );
 
+-- 데이터 삽입
 INSERT INTO student (student_no, name, age, phone, address, memo)
 VALUES (NULL, '홍길동', 30, '010-1111-2222', '한양', '홍길동입니다.');
 
+-- 데이터 검색
 select * from student;
+
+-- 2. 회원 테이블 생성
+CREATE TABLE member (
+    id VARCHAR(10) PRIMARY KEY,
+    name VARCHAR(30) NOT NULL,
+    age INT NOT NULL,
+    address VARCHAR(60)
+);
+
+-- 데이터 삽입
+insert into member(id, name, age, address) values ('dragon', '박문수', 40, '서울시');
+insert into member(id, name, age, address) values ('sky', '김윤신', 30, '부산시');
+insert into member(id, name, age, address) values ('blue', '이순신', 40, '인천시');
+
+-- 데이터 검색
+select * from member;
+
+select * from member where name like '%신%';
 </code></pre>
 
 </body>
