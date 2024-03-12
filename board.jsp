@@ -43,6 +43,8 @@
                                 PreparedStatement pstmt = conn.prepareStatement("INSERT INTO comments (content) VALUES (?)");
                                 pstmt.setString(1, contentToPost);
                                 pstmt.executeUpdate();
+                                pstmt.close();
+                                conn.close();
                             }
                             
                             // 게시물 목록 불러오기
@@ -62,6 +64,9 @@
                                 <li class="list-group-item"><%= content %></li>
                     <%
                             }
+                            rs.close();
+                            statement.close();
+                            conn.close();
                         } catch(Exception e) {
                             e.printStackTrace();
                         }
