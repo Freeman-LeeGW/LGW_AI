@@ -31,6 +31,21 @@
                 <ul class="list-group">
                     <% 
                         try {
+                            // 글 게시 처리
+                            String contentToPost = request.getParameter("content");
+                            if (contentToPost != null && !contentToPost.isEmpty()) {
+                                Class.forName("com.mysql.jdbc.Driver");
+                                String url = "jdbc:mysql://LeeGilWoo.mysql.pythonanywhere-services.com/LeeGilWoo$comments";
+                                String username = "LeeGilWoo";
+                                String password = "suny10**";
+
+                                Connection conn = DriverManager.getConnection(url, username, password);
+                                PreparedStatement pstmt = conn.prepareStatement("INSERT INTO comments (content) VALUES (?)");
+                                pstmt.setString(1, contentToPost);
+                                pstmt.executeUpdate();
+                            }
+                            
+                            // 게시물 목록 불러오기
                             Class.forName("com.mysql.jdbc.Driver");
                             String url = "jdbc:mysql://LeeGilWoo.mysql.pythonanywhere-services.com/LeeGilWoo$comments";
                             String username = "LeeGilWoo";
