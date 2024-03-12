@@ -15,18 +15,6 @@
         <hr>
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
-                <form action="board.jsp" method="post">
-                    <div class="form-group">
-                        <label for="content">내용</label>
-                        <textarea class="form-control" id="content" name="content" rows="5"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">게시</button>
-                </form>
-            </div>
-        </div>
-        <hr>
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
                 <h2>게시물 목록</h2>
                 <ul class="list-group">
                     <% 
