@@ -31,42 +31,28 @@
                 <ul class="list-group">
                     <% 
                         try {
-                            // 글 게시 처리
-                            String contentToPost = request.getParameter("content");
-                            if (contentToPost != null && !contentToPost.isEmpty()) {
-                                Class.forName("com.mysql.jdbc.Driver");
-                                String url = "jdbc:mysql://LeeGilWoo.mysql.pythonanywhere-services.com/LeeGilWoo$comments";
-                                String username = "LeeGilWoo";
-                                String password = "suny10**";
-
-                                Connection conn = DriverManager.getConnection(url, username, password);
-                                PreparedStatement pstmt = conn.prepareStatement("INSERT INTO comments (content) VALUES (?)");
-                                pstmt.setString(1, contentToPost);
-                                pstmt.executeUpdate();
-                                pstmt.close();
-                                conn.close();
-                                
-                                // 새로운 글이 추가되었으므로 현재 페이지를 새로고침하여 목록을 업데이트합니다.
-                                response.sendRedirect("board.jsp");
-                            }
-                            
-                            // 게시물 목록 불러오기
+                            // DB 연결
                             Class.forName("com.mysql.jdbc.Driver");
                             String url = "jdbc:mysql://LeeGilWoo.mysql.pythonanywhere-services.com/LeeGilWoo$comments";
                             String username = "LeeGilWoo";
                             String password = "suny10**";
 
                             Connection conn = DriverManager.getConnection(url, username, password);
+                            
+                            // 게시물 목록 가져오기
                             Statement statement = conn.createStatement();
                             String sql = "SELECT * FROM comments";
                             ResultSet rs = statement.executeQuery(sql);
 
+                            // 결과 출력
                             while(rs.next()) {
                                 String content = rs.getString("content");
                     %>
                                 <li class="list-group-item"><%= content %></li>
                     <%
                             }
+                            
+                            // 자원 해제
                             rs.close();
                             statement.close();
                             conn.close();
@@ -74,7 +60,6 @@
                             e.printStackTrace();
                         }
                     %>
-					
                 </ul>
             </div>
         </div>
