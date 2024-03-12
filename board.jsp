@@ -1,7 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*" %>
-<%@ page import="java.util.List" %>
-<%@ page import="java.util.ArrayList" %> <!-- 추가 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,37 +30,27 @@
                 <h2>게시물 목록</h2>
                 <ul class="list-group">
                     <% 
-                    try {
-                        // 데이터베이스 연결 설정
-                        String url = "jdbc:mysql://LeeGilWoo.mysql.pythonanywhere-services.com/LeeGilWoo$comments"; <!-- 수정 -->
-                        String username = "LeeGilWoo"; <!-- 수정 -->
-                        String password = "suny10**"; <!-- 수정 -->
-                        Class.forName("com.mysql.jdbc.Driver");
-                        Connection conn = DriverManager.getConnection(url, username, password);
+                        try {
+                            Class.forName("com.mysql.jdbc.Driver");
+                            String url = "jdbc:mysql://LeeGilWoo.mysql.pythonanywhere-services.com/LeeGilWoo$comments";
+                            String username = "LeeGilWoo";
+                            String password = "suny10**";
 
-                        // 게시물 조회 쿼리 실행
-                        String sql = "SELECT * FROM comments";
-                        Statement statement = conn.createStatement();
-                        ResultSet rs = statement.executeQuery(sql);
-                        List<String> comments = new ArrayList<>(); <!-- 수정 -->
-                        while(rs.next()) {
-                            String content = rs.getString("content");
-                            comments.add(content); <!-- 수정 -->
+                            Connection conn = DriverManager.getConnection(url, username, password);
+                            Statement statement = conn.createStatement();
+                            String sql = "SELECT * FROM comments";
+                            ResultSet rs = statement.executeQuery(sql);
+
+                            while(rs.next()) {
+                                String content = rs.getString("content");
                     %>
-                            <li class="list-group-item"><%= content %></li>
-                    <% 
+                                <li class="list-group-item"><%= content %></li>
+                    <%
+                            }
+                        } catch(Exception e) {
+                            e.printStackTrace();
                         }
-                        rs.close();
-                        statement.close();
-                        conn.close();
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
                     %>
-                    <!-- 게시물 목록 추가 -->
-                    <% for (String comment : comments) { %>
-                        <li class="list-group-item"><%= comment %></li>
-                    <% } %>
                 </ul>
             </div>
         </div>
