@@ -20,8 +20,8 @@
                     try {
                         // DB 연결
                         Class.forName("com.mysql.jdbc.Driver");
-                        String url = "jdbc:mysql://LeeGilWoo.mysql.pythonanywhere-services.com/LeeGilWoo$comments";
-                        String username = "LeeGilWoo";
+                        String url = "jdbc:mysql://223.130.143.77/test$member";
+                        String username = "root";
                         String password = "suny10**";
 
                         conn = DriverManager.getConnection(url, username, password);
