@@ -15,40 +15,47 @@
         <hr>
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
-                <h2>게시물 목록</h2>
-                <ul class="list-group">
-                    <% 
+                <% 
+                    Connection conn = null;
+                    try {
+                        // DB 연결
+                        Class.forName("com.mysql.jdbc.Driver");
+                        String url = "jdbc:mysql://LeeGilWoo.mysql.pythonanywhere-services.com/LeeGilWoo$comments";
+                        String username = "LeeGilWoo";
+                        String password = "suny10**";
+
+                        conn = DriverManager.getConnection(url, username, password);
+                        out.println("<h3>DB 연결 성공</h3>");
+                        
+                        // 게시물 목록 가져오기
+                        Statement statement = conn.createStatement();
+                        String sql = "SELECT * FROM comments";
+                        ResultSet rs = statement.executeQuery(sql);
+
+                        // 결과 출력
+                        out.println("<ul class='list-group'>");
+                        while(rs.next()) {
+                            String content = rs.getString("content");
+                %>
+                            <li class="list-group-item"><%= content %></li>
+                <%
+                        }
+                        out.println("</ul>");
+                        
+                        // 자원 해제
+                        rs.close();
+                        statement.close();
+                    } catch(Exception e) {
+                        out.println("<h3>DB 연결 실패</h3>");
+                        e.printStackTrace();
+                    } finally {
                         try {
-                            // DB 연결
-                            Class.forName("com.mysql.jdbc.Driver");
-                            String url = "jdbc:mysql://LeeGilWoo.mysql.pythonanywhere-services.com/LeeGilWoo$comments";
-                            String username = "LeeGilWoo";
-                            String password = "suny10**";
-
-                            Connection conn = DriverManager.getConnection(url, username, password);
-                            
-                            // 게시물 목록 가져오기
-                            Statement statement = conn.createStatement();
-                            String sql = "SELECT * FROM comments";
-                            ResultSet rs = statement.executeQuery(sql);
-
-                            // 결과 출력
-                            while(rs.next()) {
-                                String content = rs.getString("content");
-                    %>
-                                <li class="list-group-item"><%= content %></li>
-                    <%
-                            }
-                            
-                            // 자원 해제
-                            rs.close();
-                            statement.close();
-                            conn.close();
-                        } catch(Exception e) {
+                            if (conn != null) conn.close();
+                        } catch (SQLException e) {
                             e.printStackTrace();
                         }
-                    %>
-                </ul>
+                    }
+                %>
             </div>
         </div>
     </div>
