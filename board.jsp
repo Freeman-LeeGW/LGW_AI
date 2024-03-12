@@ -19,6 +19,8 @@
             String password = "sunyy10";
             // 데이터베이스 연결
             conn = DriverManager.getConnection(url, username, password);
+            // 연결 성공 메시지 출력
+            out.println("<h2>연결 성공</h2>");
             // SQL 쿼리 실행
             String sql = "SELECT * FROM member";
             stmt = conn.createStatement();
@@ -34,6 +36,8 @@
             }
             out.println("</table>");
         } catch (Exception e) {
+            // 연결 실패 메시지 출력
+            out.println("<h2>연결 실패</h2>");
             e.printStackTrace();
         } finally {
             // 리소스 해제
