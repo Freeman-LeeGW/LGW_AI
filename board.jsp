@@ -45,6 +45,9 @@
                                 pstmt.executeUpdate();
                                 pstmt.close();
                                 conn.close();
+                                
+                                // 새로운 글이 추가되었으므로 현재 페이지를 새로고침하여 목록을 업데이트합니다.
+                                response.sendRedirect("board.jsp");
                             }
                             
                             // 게시물 목록 불러오기
